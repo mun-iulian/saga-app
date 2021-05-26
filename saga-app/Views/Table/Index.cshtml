@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Table Page";
+}
+<div class="text-center">
+    <button onclick="showPopup('@Url.Action("Upsert","Table", null, Context.Request.Scheme)','Create Item')" class="display-4">Add New Item</button>
+</div>
+
+<br />
+
+<div class="card shadow">
+    <div class="card-header">
+        <h6 class="m-0 font-weight-bold">Table</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="DT_load" class="table table-striped table-bordered dataTable no-footer" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Field 1</th>
+                        <th>Field 2</th>
+                        <th>Field 3</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="form-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/tableHandler.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+}
